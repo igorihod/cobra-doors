@@ -51,7 +51,7 @@
 	display: block;
 	height: calc(100vh - 83px);
 	/* height: 100vh; */
-	background-image: url('./public/images/back-ground-new.jpg');
+	background-image: url('.././public/images/background_large.png');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
