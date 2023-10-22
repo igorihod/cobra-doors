@@ -1,0 +1,98 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+.App {
+	width: 100%;
+	height: 100%;
+}
+
+.Header {
+	width: 115%;
+	height: 10%;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+/* .Logo {
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 0px;
+} */
+
+.Sidebar {
+	width: 250px;
+	height: 100%;
+	background-color: #cc313d;
+}
+.SidebarButton {
+	border-bottom: 3px solid white;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.DoorConfig {
+	position: relative;
+	/* border: 2px solid #003B62; */
+	width: 100%;
+	/* height: 90%; */
+	/* background-image: url("public/images/background_test.png"); */
+	background-size: cover;
+}
+
+.Content {
+	flex: 1;
+	position: relative;
+	display: block;
+	height: calc(100vh - 83px);
+	/* height: 100vh; */
+	background-image: url('./public/images/back-ground-new.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+}
+
+.DoorImage {
+	position: relative;
+	width: 200px;
+	height: 430px;
+}
+
+.ColorImage {
+	position: relative;
+	mix-blend-mode: multiply;
+}
+
+.blend-multiply {
+	mix-blend-mode: multiply;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1360px) {
+}
+
+@media (max-width: 768px) {
+	.Content {
+		background-image: url('./public/images/back-mob.svg');
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% auto;
+	}
+	.sidebar-container {
+		display: none;
+	}
+	.content-container {
+		display: flex;
+		flex-direction: column;
+	}
+}

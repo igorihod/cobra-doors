@@ -1,0 +1,32 @@
+@use 'sass:math';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+$vw-viewport: 390;
+@function get-vw($font) {
+	$vw-context: $vw-viewport * 0.01 * 1px;
+	@return math.div($font, $vw-context) * 1vw;
+}
+
+@function pxToRem($px) {
+	@return math.div($px, 16) + rem;
+}
+
+@media (max-width: 768px) {
+	.BurgerMenu {
+		.burger-button {
+			font-size: pxToRem(23);
+			width: 100%;
+			text-align: left;
+			color: #242424;
+			background-color: #ffffff;
+			padding: pxToRem(14) 0 pxToRem(14) pxToRem(31);
+			&:focus {
+				color: #ffffff;
+				background-color: #f32929;
+			}
+		}
+	}
+	.offcanvas-header {
+		padding-bottom: 0;
+	}
+}

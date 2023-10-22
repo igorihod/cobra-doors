@@ -1,0 +1,50 @@
+@use 'sass:math';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+$vw-viewport: 390;
+@function get-vw($font) {
+	$vw-context: $vw-viewport * 0.01 * 1px;
+	@return math.div($font, $vw-context) * 1vw;
+}
+
+@function pxToRem($px) {
+	@return math.div($px, 16) + rem;
+}
+
+
+
+@media (max-width: 768px) {
+	.content-bottom {
+		.buttons {
+			button {
+				padding: get-vw(17px) 0;
+			}
+			.btn-back {
+				color: #242424;
+				font-size: get-vw(23px);
+			}
+			.btn-next {
+				color: #ffffff;
+				font-size: get-vw(23px);
+				background-color: #f32929;
+				border-radius: 0;
+			}
+		}
+	}
+	.width-mobile {
+		width: 100% !important;
+		position: relative !important;
+	}
+	.carousel-img-container {
+		gap: get-vw(15px);
+		img {
+			width: get-vw(130px);
+		}
+	}
+	.carousel-img-color-container {
+		img {
+			width: get-vw(130px);
+			height: get-vw(100px);
+		}
+	}
+}
