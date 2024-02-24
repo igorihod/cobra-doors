@@ -14,11 +14,15 @@ $vw-viewport: 1920;
 	.DoorImgContainer {
 		padding-top: get-vw(350px);
 		position: absolute;
-		top: 0;
+		top: get-vw(45px);
 		left: 0;
 		.DoorImg {
+			width: 140px;
+			height: 327px;
 			max-width: get-vw(200px);
 			max-height: get-vw(350px);
+		}
+		.Door {
 		}
 	}
 }

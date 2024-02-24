@@ -1,11 +1,12 @@
-import { DoorMapping } from '../constants/Constants'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { DoorMapping } from '../constants/Constants'
 import './ContentBottom/ContentBottom.scss'
 
 const PopUp1 = (props) => {
 	const [selectedButton, setSelectedButton] = useState('fiberglass')
 	const [selectedImage, setSelectedImage] = useState(null)
+	console.log(selectedButton)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -14,15 +15,28 @@ const PopUp1 = (props) => {
 		}
 	}, [])
 
-	const handleChildElementClick = (button) => {
-		setSelectedButton(button)
-	}
+	// const handleChildElementClick = (button) => {
+	// 	setSelectedButton(button)
+	// }
 
 	const handleImageClick = (image) => {
 		setSelectedImage(image.id)
+
 		props.onDoorModelClick({
 			doorShape: image.id,
 		})
+		// setSelectedButton((prevSelectedButton) => {
+		// 	handleDoorModelClick(prevSelectedButton)
+		// 	return prevSelectedButton
+		// })
+		handleDoorModelClick(selectedButton)
+		//const currentSelectedButton = selectedButton
+
+		// setSelectedButton(currentSelectedButton)
+
+		//console.log('currentSelectedButton', currentSelectedButton)
+
+		//handleDoorModelClick(currentSelectedButton)
 	}
 
 	const renderImages = () => {
@@ -75,8 +89,17 @@ const PopUp1 = (props) => {
 		)
 	}
 
+	// useEffect(() => {
+	// 	const currentSelectedButton = selectedButton
+
+	// 	setSelectedButton(currentSelectedButton)
+
+	// 	console.log('selectedButton changed:', currentSelectedButton)
+	// }, [selectedButton])
 	const handleDoorModelClick = (doorModel) => {
 		setSelectedButton(doorModel)
+
+		console.log('selectedButton', doorModel)
 	}
 
 	return (

@@ -1,11 +1,6 @@
 import '../../App.css'
 
 import React, { useState } from 'react'
-import Button from '../Button'
-import PopUp1 from '../PopUp1'
-import PopUp2 from '../PopUp2'
-import PopUp3 from '../PopUp3'
-import PopUp5 from '../PopUp5'
 import { useStateContext } from '../Context/Context'
 import './BurgerMenu.scss'
 

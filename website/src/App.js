@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './App.css'
-import Header from './components/Header/Header'
-import Sidebar from './components/Sidebar'
-import DoorPreview from './components/DoorPreview/DoorPreview'
 import ContentBottom from './components/ContentBottom/ContentBottom'
 import { StateProvider } from './components/Context/Context'
+import DoorPreview from './components/DoorPreview/DoorPreview'
+import Header from './components/Header/Header'
+import Sidebar from './components/Sidebar'
 
 function App() {
 	// const [selectedOption, setSelectedOption] = useState(null);
@@ -12,7 +12,7 @@ function App() {
 	// const handleOptionSelect = (option) => {
 	//   setSelectedOption(option);
 	// };
-
+	console.log('APP')
 	const [doorConfig, setDoorConfig] = useState({
 		doorShape: null,
 		color: null,

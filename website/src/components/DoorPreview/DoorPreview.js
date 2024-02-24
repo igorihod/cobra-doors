@@ -5,7 +5,6 @@ import {
 	DoorMapping,
 	GlassMapping,
 } from '../../constants/Constants'
-import { pxToVw } from '../../utils'
 import './DoorPreview.scss'
 
 const DoorPreview = ({ selectedOptions }) => {
@@ -22,11 +21,21 @@ const DoorPreview = ({ selectedOptions }) => {
 		setDoorConfig(updatedConfig)
 	}
 
+	function findGlassSrc() {
+		return GlassMapping.find((glass) => {
+			if (glass.id === doorConfig.windowShape) {
+				glassImg.classList.remove('d-none')
+				glassImg.classList.add('d-block')
+				doorImg.classList.add('d-none')
+				return glass.id === doorConfig.windowShape
+			}
+		})
+	}
 	function findDoorSrc() {
 		return DoorMapping.find((door) => {
 			if (door.id === doorConfig.doorShape) {
 				doorImg.classList.remove('d-none')
-				glassImg.classList.add('d-none')
+				//glassImg.classList.add('d-none')
 				return door.id === doorConfig.doorShape
 			}
 		})
@@ -38,16 +47,6 @@ const DoorPreview = ({ selectedOptions }) => {
 		})
 	}
 
-	function findGlassSrc() {
-		return GlassMapping.find((glass) => {
-			if (glass.id === doorConfig.windowShape) {
-				glassImg.classList.add('d-block')
-				glassImg.classList.remove('d-none')
-				doorImg.classList.add('d-none')
-				return glass.id === doorConfig.windowShape
-			}
-		})
-	}
 	function defaultDoorSrc() {
 		return DoorMapping.find((img) => {
 			return img.id === 'fb1'
@@ -77,7 +76,7 @@ const DoorPreview = ({ selectedOptions }) => {
 					>
 						<img
 							src={findGlassSrc() ? findGlassSrc().src : ''}
-							className="DoorImg ml-[30%]"
+							className="DoorImg  ml-[30%]"
 						/>
 					</div>
 
@@ -88,7 +87,7 @@ const DoorPreview = ({ selectedOptions }) => {
 									? findDoorSrc().src
 									: defaultDoorSrc().src
 							}
-							className="DoorImg  ml-[30%] "
+							className="DoorImg   ml-[30%] "
 							id="doorImage"
 							// style={{ maxWidth: '200px', maxHeight: '400px' }}
 							onLoad={() => {
@@ -117,7 +116,7 @@ const DoorPreview = ({ selectedOptions }) => {
 								maskImage: `url(${
 									findDoorSrc() ? findDoorSrc().src : ''
 								})`,
-								maskSize: 'cover',
+								maskSize: '100% 100%',
 								maskRepeat: 'no-repeat',
 							}}
 						/>
