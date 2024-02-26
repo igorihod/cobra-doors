@@ -4,7 +4,9 @@ import { DoorMapping } from '../constants/Constants'
 import './ContentBottom/ContentBottom.scss'
 
 const PopUp1 = (props) => {
-	const [selectedButton, setSelectedButton] = useState('fiberglass')
+	const [selectedButton, setSelectedButton] = useState(
+		sessionStorage.getItem('currentSelectedButton') || 'fiberglass'
+	)
 	const [selectedImage, setSelectedImage] = useState(null)
 	console.log(selectedButton)
 
@@ -15,28 +17,16 @@ const PopUp1 = (props) => {
 		}
 	}, [])
 
-	// const handleChildElementClick = (button) => {
-	// 	setSelectedButton(button)
-	// }
-
 	const handleImageClick = (image) => {
 		setSelectedImage(image.id)
 
 		props.onDoorModelClick({
 			doorShape: image.id,
 		})
-		// setSelectedButton((prevSelectedButton) => {
-		// 	handleDoorModelClick(prevSelectedButton)
-		// 	return prevSelectedButton
-		// })
+
 		handleDoorModelClick(selectedButton)
-		//const currentSelectedButton = selectedButton
-
-		// setSelectedButton(currentSelectedButton)
-
-		//console.log('currentSelectedButton', currentSelectedButton)
-
-		//handleDoorModelClick(currentSelectedButton)
+		const currentSelectedButton = selectedButton
+		sessionStorage.setItem('currentSelectedButton', currentSelectedButton)
 	}
 
 	const renderImages = () => {
@@ -89,13 +79,6 @@ const PopUp1 = (props) => {
 		)
 	}
 
-	// useEffect(() => {
-	// 	const currentSelectedButton = selectedButton
-
-	// 	setSelectedButton(currentSelectedButton)
-
-	// 	console.log('selectedButton changed:', currentSelectedButton)
-	// }, [selectedButton])
 	const handleDoorModelClick = (doorModel) => {
 		setSelectedButton(doorModel)
 

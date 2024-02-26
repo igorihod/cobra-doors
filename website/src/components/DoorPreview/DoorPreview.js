@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import '../../App.css'
+import '../../App.scss'
 import {
 	ColorMapping,
 	DoorMapping,
 	GlassMapping,
 } from '../../constants/Constants'
-import './DoorPreview.scss'
+import SwitchTheme from '../SwitchTheme/SwitchTheme'
 
 const DoorPreview = ({ selectedOptions }) => {
 	const [doorConfig, setDoorConfig] = useState({
@@ -123,6 +123,7 @@ const DoorPreview = ({ selectedOptions }) => {
 					</div>
 				</div>
 			</div>
+			<SwitchTheme />
 		</div>
 	)
 }

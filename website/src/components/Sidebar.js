@@ -1,11 +1,10 @@
-import '../App.css'
+import '../App.scss'
 
 import React, { useState } from 'react'
 
-import modelIcon from '../public/icons/model.svg'
 import colorIcon from '../public/icons/color.svg'
 import glassIcon from '../public/icons/glass.svg'
-import furnitureIcon from '../public/icons/furn.svg'
+import modelIcon from '../public/icons/model.svg'
 import submitIcon from '../public/icons/option.svg'
 
 import Button from './Button'

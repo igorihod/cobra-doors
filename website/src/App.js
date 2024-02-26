@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css'
+import './App.scss'
 import ContentBottom from './components/ContentBottom/ContentBottom'
 import { StateProvider } from './components/Context/Context'
 import DoorPreview from './components/DoorPreview/DoorPreview'

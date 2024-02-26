@@ -18,11 +18,8 @@ $vw-viewport: 1920;
 		left: 0;
 		.DoorImg {
 			width: 140px;
-			height: 327px;
 			max-width: get-vw(200px);
 			max-height: get-vw(350px);
-		}
-		.Door {
 		}
 	}
 }
@@ -34,9 +31,7 @@ $vw-viewport: 1920;
 		@return math.div($font, $vw-context) * 1vw;
 	}
 	.DoorDetails {
-		// margin-left: 38%;
 		margin: 0 0 get-vw(66px) 38%;
-		// width: 100%;
 
 		.DoorImgContainer {
 			padding-top: get-vw(90px);

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Offcanvas from 'react-bootstrap/Offcanvas'
-import '../../App.css'
+import '../../App.scss'
 import burger from '../../public/icons/burger.png'
 import Close from '../../public/icons/close.svg'
 import logo from '../../public/logo/logo.jpg'
-import BurgeMenu from '../BurgerMenu/BurgerMenu'
+import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import './Header.scss'
 
 function Header() {
@@ -47,7 +47,7 @@ function Header() {
 						</button>
 					</Offcanvas.Header>
 					<Offcanvas.Body className="p-0">
-						<BurgeMenu></BurgeMenu>
+						<BurgerMenu></BurgerMenu>
 					</Offcanvas.Body>
 				</Offcanvas>
 			</div>
