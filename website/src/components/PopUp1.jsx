@@ -8,7 +8,6 @@ const PopUp1 = (props) => {
 		sessionStorage.getItem('currentSelectedButton') || 'fiberglass'
 	)
 	const [selectedImage, setSelectedImage] = useState(null)
-	console.log(selectedButton)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -81,8 +80,6 @@ const PopUp1 = (props) => {
 
 	const handleDoorModelClick = (doorModel) => {
 		setSelectedButton(doorModel)
-
-		console.log('selectedButton', doorModel)
 	}
 
 	return (

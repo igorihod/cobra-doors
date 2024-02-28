@@ -14,12 +14,12 @@ $vw-viewport: 1920;
 	.DoorImgContainer {
 		padding-top: get-vw(350px);
 		position: absolute;
-		top: get-vw(45px);
+		top: get-vw(80px);
 		left: 0;
 		.DoorImg {
 			width: 140px;
-			max-width: get-vw(200px);
-			max-height: get-vw(350px);
+			max-width: get-vw(140px);
+			max-height: get-vw(315px);
 		}
 	}
 }
@@ -38,11 +38,12 @@ $vw-viewport: 1920;
 			position: relative;
 			&.colorimg {
 				position: absolute;
-				top: 0;
+				top: 22px;
 				left: 38%;
 			}
 			&.GlassImg {
-				display: none;
+				position: absolute;
+				left: 38%;
 			}
 			.DoorImg {
 				min-width: get-vw(100px);

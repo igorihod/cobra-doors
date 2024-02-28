@@ -24,6 +24,7 @@ const DoorPreview = ({ selectedOptions }) => {
 	function findGlassSrc() {
 		return GlassMapping.find((glass) => {
 			if (glass.id === doorConfig.windowShape) {
+				console.log('GLASS')
 				glassImg.classList.remove('d-none')
 				glassImg.classList.add('d-block')
 				doorImg.classList.add('d-none')
@@ -34,6 +35,7 @@ const DoorPreview = ({ selectedOptions }) => {
 	function findDoorSrc() {
 		return DoorMapping.find((door) => {
 			if (door.id === doorConfig.doorShape) {
+				console.log('GLASS')
 				doorImg.classList.remove('d-none')
 				//glassImg.classList.add('d-none')
 				return door.id === doorConfig.doorShape
@@ -76,7 +78,7 @@ const DoorPreview = ({ selectedOptions }) => {
 					>
 						<img
 							src={findGlassSrc() ? findGlassSrc().src : ''}
-							className="DoorImg  ml-[30%]"
+							className="DoorImg  ml-[35%]"
 						/>
 					</div>
 
@@ -87,7 +89,7 @@ const DoorPreview = ({ selectedOptions }) => {
 									? findDoorSrc().src
 									: defaultDoorSrc().src
 							}
-							className="DoorImg   ml-[30%] "
+							className="DoorImg   ml-[35%] "
 							id="doorImage"
 							// style={{ maxWidth: '200px', maxHeight: '400px' }}
 							onLoad={() => {
@@ -106,7 +108,7 @@ const DoorPreview = ({ selectedOptions }) => {
 					<div className="DoorImgContainer colorimg right-20">
 						<img
 							src={findColorSrc() ? findColorSrc().src : ''}
-							className="DoorImg bottom-[115px] ml-[30%] opacity-60 blend-multiply"
+							className="DoorImg bottom-[115px] ml-[35%] opacity-60 blend-multiply"
 							id="colorImage"
 							style={{
 								backgroundImage: `url(${

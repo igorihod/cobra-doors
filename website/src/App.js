@@ -5,6 +5,7 @@ import { StateProvider } from './components/Context/Context'
 import DoorPreview from './components/DoorPreview/DoorPreview'
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar'
+import { useStateSwitcher } from './components/SwitcherContext'
 
 function App() {
 	// const [selectedOption, setSelectedOption] = useState(null);
@@ -12,7 +13,9 @@ function App() {
 	// const handleOptionSelect = (option) => {
 	//   setSelectedOption(option);
 	// };
-	console.log('APP')
+	const { isChecked } = useStateSwitcher()
+
+	console.log('stateSwitcher', isChecked)
 	const [doorConfig, setDoorConfig] = useState({
 		doorShape: null,
 		color: null,
@@ -29,7 +32,7 @@ function App() {
 			<div className="App">
 				<Header />
 				{/* <div className="flex"> */}
-				<div className="Content">
+				<div className={`${isChecked ? 'Content-Indoor' : 'Content'}`}>
 					<div className="h-full grid grid-cols-9 content-container">
 						<div className="col-span-4 sidebar-container d-md-block	">
 							<Sidebar onSelect={updateDoorConfig} />

@@ -17,6 +17,12 @@ export const StateProvider = ({ children, onSelect }) => {
 	// 		{children}
 	// 	</StateContext.Provider>
 	// )
+	// const [isChecked, setIsChecked] = useState(false)
+
+	// const handleSwitchChange = () => {
+	// 	setIsChecked((isChecked) => !isChecked)
+	// }
+
 	const [selectedOption, setSelectedOption] = useState(null)
 	const handleOptionClick = (option) => {
 		setSelectedOption(option)
@@ -60,11 +66,13 @@ export const StateProvider = ({ children, onSelect }) => {
 	return (
 		<StateContext.Provider
 			value={{
+				// isChecked,
 				selectedMenuItem,
 				contentItems,
 				handleNextClick,
 				handlePrevClick,
 				handleMenuClick,
+				// handleSwitchChange,
 			}}
 		>
 			{children}

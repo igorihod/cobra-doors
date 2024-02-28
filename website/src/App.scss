@@ -50,13 +50,24 @@
 	flex: 1;
 	position: relative;
 	display: block;
-	height: calc(100vh - 83px);
+	height: calc(100vh - 84px);
 	/* height: 100vh; */
 	background-image: url('.././public/images/background_large.png');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
 	/* background-attachment: fixed; */
+}
+.Content-Indoor {
+	flex: 1;
+	position: relative;
+	display: block;
+	height: calc(100vh - 84px);
+	/* height: 100vh; */
+	background: url('.././public/images/back-Indoor-S.png');
+	background-size: 100% 100%;
+	background-position: center top;
+	background-repeat: no-repeat;
 }
 
 .DoorImage {

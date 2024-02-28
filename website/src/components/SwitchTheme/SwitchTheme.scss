@@ -30,12 +30,55 @@ $vw-viewport: 1920;
 		}
 		.form-check-label {
 			position: relative;
-			bottom: get-vw(40px);
+			bottom: get-vw(37px);
 		}
 	}
 	.switch-checked-btn {
 		.form-check-label {
-			right: get-vw(25px);
+			right: get-vw(20px);
+		}
+	}
+}
+@media (max-width: 768px) {
+	$vw-viewport: 390;
+	@function get-vw($font) {
+		$vw-context: $vw-viewport * 0.01 * 1px;
+		@return math.div($font, $vw-context) * 1vw;
+	}
+	@function pxToRem($px) {
+		@return math.div($px, 16) + rem;
+	}
+	.switch-form {
+		position: absolute;
+		right: 0;
+		top: pxToRem(25);
+		.switch-btn {
+			width: pxToRem(150);
+			.form-check-input {
+				width: pxToRem(140);
+				height: pxToRem(55);
+				background-image: url('../../public/icons/red-circle.png');
+				background-size: pxToRem(45);
+				&:checked {
+					background-color: #ffffff;
+					border-color: #ffffff;
+				}
+				&:focus {
+					border-color: #ffffff;
+					box-shadow: none;
+				}
+			}
+			.form-check-label {
+				font-size: pxToRem(20);
+				position: relative;
+				bottom: pxToRem(43);
+				left: pxToRem(10);
+			}
+		}
+		.switch-checked-btn {
+			.form-check-label {
+				left: pxToRem(-20);
+			}
 		}
 	}
 }
