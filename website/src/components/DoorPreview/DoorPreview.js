@@ -27,7 +27,7 @@ const DoorPreview = ({ selectedOptions }) => {
 				console.log('GLASS')
 				glassImg.classList.remove('d-none')
 				glassImg.classList.add('d-block')
-				doorImg.classList.add('d-none')
+				//doorImg.classList.add('d-none')
 				return glass.id === doorConfig.windowShape
 			}
 		})
@@ -36,7 +36,7 @@ const DoorPreview = ({ selectedOptions }) => {
 		return DoorMapping.find((door) => {
 			if (door.id === doorConfig.doorShape) {
 				console.log('GLASS')
-				doorImg.classList.remove('d-none')
+				//doorImg.classList.remove('d-none')
 				//glassImg.classList.add('d-none')
 				return door.id === doorConfig.doorShape
 			}
@@ -116,7 +116,9 @@ const DoorPreview = ({ selectedOptions }) => {
 								})`,
 								backgroundBlendMode: 'multiply',
 								maskImage: `url(${
-									findDoorSrc() ? findDoorSrc().src : ''
+									findDoorSrc()
+										? findDoorSrc().src
+										: defaultDoorSrc().src
 								})`,
 								maskSize: '100% 100%',
 								maskRepeat: 'no-repeat',

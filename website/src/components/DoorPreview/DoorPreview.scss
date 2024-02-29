@@ -38,7 +38,7 @@ $vw-viewport: 1920;
 			position: relative;
 			&.colorimg {
 				position: absolute;
-				top: 22px;
+				top: get-vw(17px);
 				left: 38%;
 			}
 			&.GlassImg {

@@ -15,6 +15,7 @@ $vw-viewport: 1920;
 	.switch-btn {
 		width: get-vw(135px);
 		.form-check-input {
+			margin-top: get-vw(20px);
 			width: get-vw(120px);
 			height: get-vw(50px);
 			background-image: url('../../public/icons/red-circle.png');
