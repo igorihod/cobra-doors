@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { ColorMapping } from '../constants/Constants'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { ColorMapping } from '../constants/Constants'
 
 const PopUp2 = (props) => {
 	const [selectedImage, setSelectedImage] = useState(null)
@@ -41,6 +41,7 @@ const PopUp2 = (props) => {
 	const images = ColorMapping
 
 	const handleImageClick = (image) => {
+		sessionStorage.setItem('ActiveColors', image.id)
 		setSelectedImage(image.id)
 		props.onColorClick({
 			color: image.id,
@@ -62,17 +63,17 @@ const PopUp2 = (props) => {
 
 	return (
 		<>
-			<div className="fixed flex flex-col h-full width-mobile">
-				<div className="bg-[#CC313D] w-[415px] h-[71px]  text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-md-flex">
+			<div className="fixed flex flex-col h-full width-mobile open-menu">
+				<div className="bg-[#CC313D] w-[100%] h-[71px]  text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-xl-flex">
 					COLOR
 				</div>
 				<div
-					className="bg-[#D9D9D9] p-3  overflow-y-auto "
+					className="bg-[#D9D9D9] p-3  overflow-y-auto w-100"
 					style={{ overflowY: 'auto', marginBottom: '10px' }}
 					onClick={handleChildElementClick}
 				>
 					<Carousel
-						className="d-md-none"
+						className="d-xl-none"
 						data-bs-theme="dark"
 						indicators={false}
 						interval={10000000}
@@ -131,7 +132,11 @@ const PopUp2 = (props) => {
 								<img
 									src={image.previewSrc}
 									alt={image.id}
-									className="w-[93px] h-[90px] object-cover shadow-md"
+									className={
+										selectedImage == image.id
+											? 'w-[93px] h-[90px] object-cover shadow-md active'
+											: 'w-[93px] h-[90px] object-cover shadow-md'
+									}
 									onClick={() => handleImageClick(image)}
 								/>
 								{selectedImage === image.id && (

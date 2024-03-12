@@ -46,10 +46,9 @@ function BurgerMenu({ onSelect }) {
 							<button
 								key={index}
 								className={
-									(selectedMenuItem === index
-										? 'selected'
-										: '',
-									'burger-button')
+									selectedMenuItem === index
+										? 'active burger-button'
+										: 'burger-button'
 								}
 								onClick={() => handleClick(index)}
 							>

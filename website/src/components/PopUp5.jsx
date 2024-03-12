@@ -28,12 +28,12 @@ function PopUp5(props) {
 
 	return (
 		<>
-			<div className="fixed flex flex-col width-mobile">
-				<div className="bg-[#CC313D] w-[415px] h-[66px] text-[25px] flex items-center justify-center  text-white font-bold text-center d-none d-md-flex">
+			<div className="fixed flex flex-col width-mobile open-menu">
+				<div className="bg-[#CC313D] w-[100%] h-[66px] text-[25px] flex items-center justify-center  text-white font-bold text-center d-none d-xl-flex">
 					SUBMIT
 				</div>
 				<div
-					className="bg-[#D9D9D9] flex-grow w-[415px] width-mobile h-full"
+					className="bg-[#D9D9D9] flex-grow w-[415px] width-mobile h-full w-100"
 					onClick={(e) => handleChildElementClick(e)}
 				>
 					<div className="flex flex-col items-center mt-8 pb-5 p-md-0">

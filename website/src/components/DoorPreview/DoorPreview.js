@@ -6,6 +6,7 @@ import {
 	GlassMapping,
 } from '../../constants/Constants'
 import SwitchTheme from '../SwitchTheme/SwitchTheme'
+import { useStateSwitcher } from '../SwitcherContext'
 
 const DoorPreview = ({ selectedOptions }) => {
 	const [doorConfig, setDoorConfig] = useState({
@@ -51,13 +52,15 @@ const DoorPreview = ({ selectedOptions }) => {
 
 	function defaultDoorSrc() {
 		return DoorMapping.find((img) => {
-			return img.id === 'fb1'
+			return img.id === sessionStorage.getItem('ActiveDoors') || 'fb1'
 		})
 	}
 
 	React.useEffect(() => {
 		updateDoorConfig()
 	}, [selectedOptions])
+
+	const { isChecked } = useStateSwitcher()
 
 	return (
 		<div className="flex h-full ">
@@ -78,18 +81,23 @@ const DoorPreview = ({ selectedOptions }) => {
 					>
 						<img
 							src={findGlassSrc() ? findGlassSrc().src : ''}
-							className="DoorImg  ml-[35%]"
+							className="DoorImg  "
 						/>
 					</div>
 
-					<div className="DoorImgContainer right-20" id="doorImage">
+					<div
+						className="DoorImgContainer doors right-20"
+						id="doorImage"
+					>
 						<img
 							src={
 								findDoorSrc()
 									? findDoorSrc().src
-									: defaultDoorSrc().src
+									: defaultDoorSrc()?.src
 							}
-							className="DoorImg   ml-[35%] "
+							className={
+								isChecked ? 'DoorImg mirrored' : 'DoorImg'
+							}
 							id="doorImage"
 							// style={{ maxWidth: '200px', maxHeight: '400px' }}
 							onLoad={() => {
@@ -108,7 +116,7 @@ const DoorPreview = ({ selectedOptions }) => {
 					<div className="DoorImgContainer colorimg right-20">
 						<img
 							src={findColorSrc() ? findColorSrc().src : ''}
-							className="DoorImg bottom-[115px] ml-[35%] opacity-60 blend-multiply"
+							className="DoorImg bottom-[115px]  blend-multiply"
 							id="colorImage"
 							style={{
 								backgroundImage: `url(${
@@ -118,7 +126,7 @@ const DoorPreview = ({ selectedOptions }) => {
 								maskImage: `url(${
 									findDoorSrc()
 										? findDoorSrc().src
-										: defaultDoorSrc().src
+										: defaultDoorSrc()?.src
 								})`,
 								maskSize: '100% 100%',
 								maskRepeat: 'no-repeat',

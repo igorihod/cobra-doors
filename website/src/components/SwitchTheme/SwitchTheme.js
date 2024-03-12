@@ -17,8 +17,8 @@ function SwitchTheme() {
 				<Form.Check
 					className={
 						isChecked
-							? 'switch-checked-btn switch-btn'
-							: 'switch-btn'
+							? 'switch-checked-btn switch-btn d-flex flex-column'
+							: 'switch-btn  d-flex flex-column'
 					}
 					type="switch"
 					id="custom-switch"

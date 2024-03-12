@@ -16,18 +16,18 @@ import PopUp5 from './PopUp5'
 const Sidebar = ({ onSelect }) => {
 	const [selectedOption, setSelectedOption] = useState(null)
 
-	const [showsubMenu, setSubShowMenu] = useState(0)
+	const [showsubMenu, setSubShowMenu] = useState(1)
 	const [showPopUp1, setShowPopUp1] = useState(false)
 	const [showPopUp2, setShowPopUp2] = useState(false)
 	const [showPopUp3, setShowPopUp3] = useState(false)
 	const [showPopUp5, setShowPopUp5] = useState(false)
 
 	const openSideBar = (id) => {
-		if (showsubMenu === id) {
-			setSubShowMenu(0)
-		} else {
-			setSubShowMenu(id)
-		}
+		// if (showsubMenu === id) {
+		// 	setSubShowMenu(0)
+		// } else {
+		setSubShowMenu(id)
+		// }
 	}
 
 	const closePopUp = () => {

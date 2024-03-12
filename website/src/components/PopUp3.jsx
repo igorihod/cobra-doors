@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { GlassMapping } from '../constants/Constants'
 import Carousel from 'react-bootstrap/Carousel'
+import { GlassMapping } from '../constants/Constants'
 
 const PopUp3 = (props) => {
 	const [selectedImage, setSelectedImage] = useState(null)
@@ -27,7 +27,7 @@ const PopUp3 = (props) => {
 		return (
 			<div>
 				<Carousel
-					className="d-md-none"
+					className="d-xl-none"
 					data-bs-theme="dark"
 					indicators={false}
 					interval={100000}
@@ -56,7 +56,7 @@ const PopUp3 = (props) => {
 					))}
 				</Carousel>
 
-				<div className="flex flex-wrap ml-[22px] mt-8 gap-x-16 gap-y-10 grid-start-2 grid-end-3 grid-span-2 d-none d-md-flex">
+				<div className="flex flex-wrap ml-[22px] mt-8 gap-x-16 gap-y-10 grid-start-2 grid-end-3 grid-span-2 d-none d-md-flex justify-center">
 					{images.map((image, index) => (
 						<img
 							key={index}
@@ -73,11 +73,11 @@ const PopUp3 = (props) => {
 
 	return (
 		<>
-			<div className="fixed flex flex-col h-full width-mobile">
-				<div className="bg-[#CC313D] w-[415px] h-[360px]  text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-md-flex">
+			<div className="fixed flex flex-col h-full width-mobile open-menu">
+				<div className="bg-[#CC313D] w-[100%] h-[360px]  text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-xl-flex">
 					GLASS
 				</div>
-				<div className="bg-[#D9D9D9] flex-grow w-[415px]  width-mobile max-h-[854px] overflow-y-auto p-4">
+				<div className="bg-[#D9D9D9] flex-grow w-[415px]  width-mobile max-h-[854px] overflow-y-auto p-4 w-100">
 					<div className="flex flex-col image-container">
 						{renderImages()}
 					</div>

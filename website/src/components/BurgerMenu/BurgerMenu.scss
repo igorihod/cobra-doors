@@ -11,7 +11,7 @@ $vw-viewport: 390;
 	@return math.div($px, 16) + rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.BurgerMenu {
 		.burger-button {
 			font-size: pxToRem(23);
@@ -20,7 +20,7 @@ $vw-viewport: 390;
 			color: #242424;
 			background-color: #ffffff;
 			padding: pxToRem(14) 0 pxToRem(14) pxToRem(31);
-			&:focus {
+			&.active {
 				color: #ffffff;
 				background-color: #f32929;
 			}

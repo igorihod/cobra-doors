@@ -12,38 +12,68 @@ $vw-viewport: 1920;
 }
 .DoorDetails {
 	.DoorImgContainer {
-		padding-top: get-vw(350px);
-		position: absolute;
-		top: get-vw(80px);
-		left: 0;
+		//padding-top: get-vw(350px);
+		//position: absolute;
+		//bottom: get-vw(20px);
+		left: 25%;
 		.DoorImg {
-			width: 140px;
-			max-width: get-vw(140px);
-			max-height: get-vw(315px);
+			width: get-vw(340px);
+			max-width: get-vw(280px);
+			max-height: get-vw(580px);
+			&.mirrored {
+				transform: scaleX(-1);
+			}
+		}
+		&.colorimg {
+			position: absolute;
+			z-index: 0;
+			margin-top: get-vw(-580px);
+			left: 25%;
+			img {
+				opacity: 0.85;
+			}
+		}
+		&.doors {
+			margin-left: 25%;
+			padding: 0;
+			margin-top: 18%;
+		}
+		&.GlassImg {
+			position: absolute;
+			z-index: -3;
+			//bottom: 0;
+			margin-top: 0px;
+			left: 25%;
 		}
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	$vw-viewport: 390;
 	@function get-vw($font) {
 		$vw-context: $vw-viewport * 0.01 * 1px;
 		@return math.div($font, $vw-context) * 1vw;
 	}
 	.DoorDetails {
-		margin: 0 0 get-vw(66px) 38%;
+		margin: 0 0 get-vw(50px) 38%;
 
 		.DoorImgContainer {
-			padding-top: get-vw(90px);
-			position: relative;
+			//padding-bottom: get-vw(90px);
+			//position: relative;
+			//left: 0;
+			//bottom: -15px;
 			&.colorimg {
-				position: absolute;
-				top: get-vw(17px);
+				margin-top: get-vw(-240px);
 				left: 38%;
 			}
 			&.GlassImg {
 				position: absolute;
-				left: 38%;
+				margin-left: get-vw(50.5px);
+			}
+			&.doors {
+				padding: 0;
+				margin-top: get-vw(105px);
+				margin-left: 0;
 			}
 			.DoorImg {
 				min-width: get-vw(100px);

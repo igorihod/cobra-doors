@@ -41,7 +41,7 @@ function App() {
 						<div className="flex-none col-span-5 sticky left-0">
 							<DoorPreview selectedOptions={doorConfig} />
 						</div>
-						<div className="ContetnBottom d-md-none">
+						<div className="ContetnBottom d-xl-none">
 							<ContentBottom />
 						</div>
 					</div>

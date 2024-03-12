@@ -11,15 +11,14 @@ $vw-viewport: 390;
 	@return math.div($px, 16) + rem;
 }
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.content-bottom {
 		.buttons {
 			button {
 				padding: get-vw(17px) 0;
 			}
 			.btn-back {
+				background-color: #ffffff;
 				color: #242424;
 				font-size: get-vw(23px);
 			}
@@ -38,13 +37,17 @@ $vw-viewport: 390;
 	.carousel-img-container {
 		gap: get-vw(15px);
 		img {
-			width: get-vw(130px);
+			//width: get-vw(130px);
+			width: 32%;
 		}
 	}
-	.carousel-img-color-container {
-		img {
-			width: get-vw(130px);
-			height: get-vw(100px);
+	.carousel-item {
+		padding: 0 15px;
+		.carousel-img-color-container {
+			img {
+				width: get-vw(130px);
+				height: get-vw(100px);
+			}
 		}
 	}
 }

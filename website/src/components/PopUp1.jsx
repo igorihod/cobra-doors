@@ -7,7 +7,9 @@ const PopUp1 = (props) => {
 	const [selectedButton, setSelectedButton] = useState(
 		sessionStorage.getItem('currentSelectedButton') || 'fiberglass'
 	)
-	const [selectedImage, setSelectedImage] = useState(null)
+	const [selectedImage, setSelectedImage] = useState(
+		sessionStorage.getItem('ActiveDoors') || null
+	)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -18,7 +20,7 @@ const PopUp1 = (props) => {
 
 	const handleImageClick = (image) => {
 		setSelectedImage(image.id)
-
+		sessionStorage.setItem('ActiveDoors', image.id)
 		props.onDoorModelClick({
 			doorShape: image.id,
 		})
@@ -35,7 +37,7 @@ const PopUp1 = (props) => {
 		return (
 			<div className="mobile">
 				<Carousel
-					className="d-md-none"
+					className="d-xl-none"
 					data-bs-theme="dark"
 					indicators={false}
 					interval={100000}
@@ -63,13 +65,17 @@ const PopUp1 = (props) => {
 						</Carousel.Item>
 					))}
 				</Carousel>
-				<div className="flex flex-wrap ml-[22px] mt-8 gap-x-16 gap-y-10 grid-start-2 grid-end-3 grid-span-2 d-none d-md-flex">
+				<div className="flex flex-wrap ml-[22px] mt-8 gap-x-16 gap-y-10 grid-start-2 grid-end-3 grid-span-2 d-none d-xl-flex justify-center">
 					{images.map((image, index) => (
 						<img
 							key={index}
 							src={image.src}
 							alt={`Image ${index + 1}`}
-							className="w-[130px] h-[300px] object-cover cursor-pointer"
+							className={
+								selectedImage == image.id
+									? 'w-[130px] h-[300px] object-cover cursor-pointer active'
+									: 'w-[130px] h-[300px] object-cover cursor-pointer'
+							}
 							onClick={() => handleImageClick(image)}
 						/>
 					))}
@@ -84,12 +90,12 @@ const PopUp1 = (props) => {
 
 	return (
 		<>
-			<div className="fixed flex flex-col width-mobile h-full ">
-				<div className="bg-[#CC313D] w-[415px] h-[70px] text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-md-flex">
+			<div className="fixed flex flex-col width-mobile h-full open-menu">
+				<div className="bg-[#CC313D] w-[100%] h-[70px] text-[25px] flex items-center justify-center text-white font-bold text-center d-none  d-xl-flex">
 					MODEL
 				</div>
-				<div className="bg-[#D9D9D9] flex-grow w-[415px] overflow-y-auto p-4 width-mobile">
-					<div className="flex justify-center mb-4 d-none d-md-flex">
+				<div className="bg-[#D9D9D9] flex-grow w-[415px] overflow-y-auto p-4 width-mobile w-100">
+					<div className="flex justify-center mb-4 d-none d-xl-flex">
 						<button
 							className={`py-2 px-4 text-[20px]  rounded-full text-white font-bold ${
 								selectedButton === 'fiberglass'
@@ -111,7 +117,7 @@ const PopUp1 = (props) => {
 							Steel
 						</button>
 					</div>
-					<div className="flex flex-column d-none d-md-block image-container">
+					<div className="flex flex-column d-none d-xl-block image-container">
 						{renderImages()}
 					</div>
 					<div className="carousel-mob">{renderImages()}</div>

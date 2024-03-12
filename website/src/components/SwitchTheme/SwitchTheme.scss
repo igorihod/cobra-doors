@@ -15,7 +15,7 @@ $vw-viewport: 1920;
 	.switch-btn {
 		width: get-vw(135px);
 		.form-check-input {
-			margin-top: get-vw(20px);
+			margin-top: get-vw(110px);
 			width: get-vw(120px);
 			height: get-vw(50px);
 			background-image: url('../../public/icons/red-circle.png');
@@ -30,17 +30,19 @@ $vw-viewport: 1920;
 			}
 		}
 		.form-check-label {
-			position: relative;
-			bottom: get-vw(37px);
+			width: get-vw(65px);
+			font-size: get-vw(16px);
+			margin-top: get-vw(-37px);
+			margin-left: get-vw(7px);
 		}
 	}
 	.switch-checked-btn {
 		.form-check-label {
-			right: get-vw(20px);
+			margin-left: get-vw(-15px);
 		}
 	}
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	$vw-viewport: 390;
 	@function get-vw($font) {
 		$vw-context: $vw-viewport * 0.01 * 1px;
@@ -71,14 +73,13 @@ $vw-viewport: 1920;
 			}
 			.form-check-label {
 				font-size: pxToRem(20);
-				position: relative;
-				bottom: pxToRem(43);
-				left: pxToRem(10);
+				margin-top: pxToRem(-43);
+				margin-left: pxToRem(10);
 			}
 		}
 		.switch-checked-btn {
 			.form-check-label {
-				left: pxToRem(-20);
+				margin-left: pxToRem(-20);
 			}
 		}
 	}
