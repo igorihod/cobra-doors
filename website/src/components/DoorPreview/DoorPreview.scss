@@ -48,6 +48,31 @@ $vw-viewport: 1920;
 	}
 }
 
+@media (max-width: 1370px) {
+	.DoorDetails {
+		.DoorImgContainer {
+			&.colorimg {
+				margin-top: -412.5px;
+				left: 24.5%;
+			}
+			&.GlassImg {
+				position: absolute;
+				margin-left: -3px;
+			}
+			&.doors {
+				padding: 0;
+				margin-top: 120px;
+				margin-left: 163px;
+			}
+			// .DoorImg {
+			// 	min-width: get-vw(100px);
+			// 	min-height: get-vw(240px);
+			// 	margin: 0;
+			// }
+		}
+	}
+}
+
 @media (max-width: 1200px) {
 	$vw-viewport: 390;
 	@function get-vw($font) {

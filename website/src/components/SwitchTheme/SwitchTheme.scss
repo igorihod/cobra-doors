@@ -13,11 +13,15 @@ $vw-viewport: 1920;
 
 .switch-form {
 	.switch-btn {
+		// width: 135px;
 		width: get-vw(135px);
 		.form-check-input {
 			margin-top: get-vw(110px);
 			width: get-vw(120px);
 			height: get-vw(50px);
+			// margin-top: 110px;
+			// width: 120px;
+			// height: 50px;
 			background-image: url('../../public/icons/red-circle.png');
 			background-size: get-vw(40px);
 			&:checked {
@@ -30,6 +34,10 @@ $vw-viewport: 1920;
 			}
 		}
 		.form-check-label {
+			// width: 65px;
+			// font-size: 16px;
+			// margin-top: -37px;
+			// margin-left: 7px;
 			width: get-vw(65px);
 			font-size: get-vw(16px);
 			margin-top: get-vw(-37px);
@@ -42,6 +50,35 @@ $vw-viewport: 1920;
 		}
 	}
 }
+@media (max-width: 1570px) {
+	.switch-form {
+		.switch-btn {
+			.form-check-label {
+				margin-left: 0;
+			}
+		}
+		.switch-checked-btn {
+			.form-check-label {
+				margin-left: -20px;
+			}
+		}
+	}
+}
+@media (max-width: 1370px) {
+	.switch-form {
+		.switch-btn {
+			.form-check-label {
+				margin-left: -7px;
+			}
+		}
+		.switch-checked-btn {
+			.form-check-label {
+				margin-left: -25px;
+			}
+		}
+	}
+}
+
 @media (max-width: 1200px) {
 	$vw-viewport: 390;
 	@function get-vw($font) {
