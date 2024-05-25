@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-
-function PopUp5(props) {
-	const [firstName, setFirstName] = useState('')
-	const [lastName, setLastName] = useState('')
-	const [phoneNumber, setPhoneNumber] = useState('')
-	const [email, setEmail] = useState('')
+import Carousel from 'react-bootstrap/Carousel'
+import { sideDoors } from '../constants/Constants'
+const PopUp5 = (props) => {
+	const [selectSideDoors, setselectSideDoors] = useState(null)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -13,110 +11,73 @@ function PopUp5(props) {
 		}
 	}, [])
 
-	const handleChildElementClick = (e) => {
-		e.stopPropagation()
+	const handleImageClick = (image) => {
+		setselectSideDoors(image.id)
+		props.onGlassClick({
+			windowShape: image.id,
+		})
+		// setShowSelectedImage(true);
 	}
 
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		console.log('First Name:', firstName)
-		console.log('Last Name:', lastName)
-		console.log('Phone Number:', phoneNumber)
-		console.log('Email:', email)
-		props.closePopUp()
+	const renderImages = () => {
+		const images = sideDoors
+
+		return (
+			<div>
+				<Carousel
+					className="d-xl-none"
+					data-bs-theme="dark"
+					indicators={false}
+					interval={100000}
+					controls={false}
+				>
+					{images.map((image, index) => (
+						<Carousel.Item key={index}>
+							<div className="carousel-img-container flex justify-between gap-[15px]">
+								{images
+									.slice(index, index + 3)
+									.map((image, subIndex) => (
+										<img
+											key={subIndex}
+											src={image.src}
+											alt={`Image ${
+												index + subIndex + 1
+											}`}
+											className="w-[130px]  h-auto object-cover cursor-pointer"
+											onClick={() =>
+												handleImageClick(image)
+											}
+										/>
+									))}
+							</div>
+						</Carousel.Item>
+					))}
+				</Carousel>
+
+				<div className="flex flex-wrap  gap-x-3 gap-y-10 grid-start-2 grid-end-3 grid-span-2 d-none d-md-flex justify-start">
+					{images.map((image, index) => (
+						<img
+							key={index}
+							src={image.src}
+							alt={`Image ${index + 1}`}
+							className="h-[300px] object-cover cursor-pointer"
+							onClick={() => handleImageClick(image)}
+						/>
+					))}
+				</div>
+			</div>
+		)
 	}
 
 	return (
 		<>
-			<div className="fixed flex flex-col width-mobile open-menu">
-				<div className="bg-[#CC313D] w-[100%] h-[66px] text-[25px] flex items-center justify-center  text-white font-bold text-center d-none d-xl-flex">
-					SUBMIT
+			<div className="fixed flex flex-col h-full width-mobile open-menu">
+				<div className="bg-[#CC313D] w-[100%] h-[360px]  text-[25px] flex items-center justify-center text-white font-bold text-center d-none d-xl-flex">
+					SHAPE
 				</div>
-				<div
-					className="bg-[#D9D9D9] flex-grow w-[415px] width-mobile h-full w-100"
-					onClick={(e) => handleChildElementClick(e)}
-				>
-					<div className="flex flex-col items-center mt-8 pb-5 p-md-0">
-						<form onSubmit={handleSubmit} className="w-2/3">
-							<div className="mb-4">
-								<label
-									htmlFor="firstName"
-									className="text-[#CC313D] text-lg font-semibold"
-								>
-									First Name
-								</label>
-								<input
-									type="text"
-									id="firstName"
-									value={firstName}
-									onChange={(e) =>
-										setFirstName(e.target.value)
-									}
-									className="block w-full mt-2 p-2 border rounded-lg focus:outline-none focus:border-[#CC313D]"
-									required
-								/>
-							</div>
-							<div className="mb-4">
-								<label
-									htmlFor="lastName"
-									className="text-[#CC313D] text-lg font-semibold"
-								>
-									Last Name
-								</label>
-								<input
-									type="text"
-									id="lastName"
-									value={lastName}
-									onChange={(e) =>
-										setLastName(e.target.value)
-									}
-									className="block w-full mt-2 p-2 border rounded-lg focus:outline-none focus:border-[#CC313D]"
-									required
-								/>
-							</div>
-							<div className="mb-4">
-								<label
-									htmlFor="phoneNumber"
-									className="text-[#CC313D] text-lg font-semibold"
-								>
-									Phone Number
-								</label>
-								<input
-									type="tel"
-									id="phoneNumber"
-									value={phoneNumber}
-									onChange={(e) =>
-										setPhoneNumber(e.target.value)
-									}
-									className="block w-full mt-2 p-2 border rounded-lg focus:outline-none focus:border-[#CC313D]"
-									required
-								/>
-							</div>
-							<div className="mb-4">
-								<label
-									htmlFor="email"
-									className="text-[#CC313D] text-lg font-semibold"
-								>
-									Email Address
-								</label>
-								<input
-									type="email"
-									id="email"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-									className="block w-full mt-2 p-2 border rounded-lg focus:outline-none focus:border-[#CC313D]"
-									required
-								/>
-							</div>
-							<div className="flex justify-center">
-								<button
-									type="submit"
-									className="px-4 py-2 bg-[#CC313D] text-white font-semibold rounded-lg shadow-md"
-								>
-									Submit
-								</button>
-							</div>
-						</form>
+				<div className="bg-[#D9D9D9] flex-grow w-[415px]  width-mobile max-h-[854px] overflow-y-auto p-4 w-100">
+					<div className="flex flex-col image-container">
+						{renderImages()}
 					</div>
 				</div>
 			</div>

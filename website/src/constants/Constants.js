@@ -747,3 +747,258 @@ export const GlassMapping = [
 		src: '/glass/28.jpg',
 	},
 ]
+
+export const sideDoors = [
+	{
+		id: '1',
+		src: '/sideDoors/side_1.svg',
+	},
+	{
+		id: '2',
+		src: '/sideDoors/side_2.svg',
+	},
+	{
+		id: '3',
+		src: '/sideDoors/side_3.svg',
+	},
+	{
+		id: '4',
+		src: '/sideDoors/side_4.svg',
+	},
+	{
+		id: '5',
+		src: '/sideDoors/side_5.svg',
+	},
+	{
+		id: '6',
+		src: '/sideDoors/side_6.svg',
+	},
+	{
+		id: '7',
+		src: '/sideDoors/side_7.svg',
+	},
+	{
+		id: '8',
+		src: '/sideDoors/side_8.svg',
+	},
+	{
+		id: '9',
+		src: '/sideDoors/side_9.svg',
+	},
+	{
+		id: '10',
+		src: '/sideDoors/side_10.svg',
+	},
+	{
+		id: '11',
+		src: '/sideDoors/side_11.svg',
+	},
+	{
+		id: '12',
+		src: '/sideDoors/side_12.svg',
+	},
+	{
+		id: '13',
+		src: '/sideDoors/side_13.svg',
+	},
+	{
+		id: '14',
+		src: '/sideDoors/side_14.svg',
+	},
+	{
+		id: '15',
+		src: '/sideDoors/side_15.svg',
+	},
+	{
+		id: '16',
+		src: '/sideDoors/side_16.svg',
+	},
+	{
+		id: '17',
+		src: '/sideDoors/side_17.svg',
+	},
+	{
+		id: '18',
+		src: '/sideDoors/side_18.svg',
+	},
+	{
+		id: '19',
+		src: '/sideDoors/side_19.svg',
+	},
+	{
+		id: '20',
+		src: '/sideDoors/side_20.svg',
+	},
+	{
+		id: '21',
+		src: '/sideDoors/side_21.svg',
+	},
+	{
+		id: '22',
+		src: '/sideDoors/side_22.svg',
+	},
+	{
+		id: '23',
+		src: '/sideDoors/side_23.svg',
+	},
+	{
+		id: '24',
+		src: '/sideDoors/side_24.svg',
+	},
+	{
+		id: '25',
+		src: '/sideDoors/side_25.svg',
+	},
+	{
+		id: '26',
+		src: '/sideDoors/side_26.svg',
+	},
+	{
+		id: '27',
+		src: '/sideDoors/side_27.svg',
+	},
+	{
+		id: '28',
+		src: '/sideDoors/side_28.svg',
+	},
+	{
+		id: '29',
+		src: '/sideDoors/side_29.svg',
+	},
+	{
+		id: '30',
+		src: '/sideDoors/side_30.svg',
+	},
+	{
+		id: '31',
+		src: '/sideDoors/side_31.svg',
+	},
+	{
+		id: '32',
+		src: '/sideDoors/side_32.svg',
+	},
+	{
+		id: '33',
+		src: '/sideDoors/side_33.svg',
+	},
+	{
+		id: '34',
+		src: '/sideDoors/side_34.svg',
+	},
+	{
+		id: '35',
+		src: '/sideDoors/side_35.svg',
+	},
+	{
+		id: '36',
+		src: '/sideDoors/side_36.svg',
+	},
+	{
+		id: '37',
+		src: '/sideDoors/side_37.svg',
+	},
+	{
+		id: '38',
+		src: '/sideDoors/side_38.svg',
+	},
+	{
+		id: '39',
+		src: '/sideDoors/side_39.svg',
+	},
+	{
+		id: '40',
+		src: '/sideDoors/side_40.svg',
+	},
+	{
+		id: '41',
+		src: '/sideDoors/side_41.svg',
+	},
+	{
+		id: '42',
+		src: '/sideDoors/side_42.svg',
+	},
+	{
+		id: '43',
+		src: '/sideDoors/side_43.svg',
+	},
+	{
+		id: '44',
+		src: '/sideDoors/side_44.svg',
+	},
+	{
+		id: '45',
+		src: '/sideDoors/side_45.svg',
+	},
+	{
+		id: '46',
+		src: '/sideDoors/side_46.svg',
+	},
+	{
+		id: '47',
+		src: '/sideDoors/side_47.svg',
+	},
+	{
+		id: '48',
+		src: '/sideDoors/side_48.svg',
+	},
+	{
+		id: '49',
+		src: '/sideDoors/side_49.svg',
+	},
+	{
+		id: '50',
+		src: '/sideDoors/side_50.svg',
+	},
+	{
+		id: '51',
+		src: '/sideDoors/side_51.svg',
+	},
+	{
+		id: '52',
+		src: '/sideDoors/side_52.svg',
+	},
+	{
+		id: '53',
+		src: '/sideDoors/side_53.svg',
+	},
+	{
+		id: '54',
+		src: '/sideDoors/side_54.svg',
+	},
+	{
+		id: '55',
+		src: '/sideDoors/side_55.svg',
+	},
+	{
+		id: '56',
+		src: '/sideDoors/side_56.svg',
+	},
+	{
+		id: '57',
+		src: '/sideDoors/side_57.svg',
+	},
+	{
+		id: '58',
+		src: '/sideDoors/side_58.svg',
+	},
+	{
+		id: '59',
+		src: '/sideDoors/side_59.svg',
+	},
+	{
+		id: '60',
+		src: '/sideDoors/side_60.svg',
+	},
+	{
+		id: '61',
+		src: '/sideDoors/side_61.svg',
+	},
+	{
+		id: '62',
+		src: '/sideDoors/side_62.svg',
+	},
+	{
+		id: '63',
+		src: '/sideDoors/side_63.svg',
+	},
+]

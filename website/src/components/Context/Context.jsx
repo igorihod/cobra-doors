@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react'
 import PopUp1 from '../PopUp1'
 import PopUp2 from '../PopUp2'
 import PopUp3 from '../PopUp3'
-import PopUp5 from '../PopUp5'
+import PopUp6 from '../PopUp6'
 
 const StateContext = createContext()
 
@@ -44,7 +44,7 @@ export const StateProvider = ({ children, onSelect }) => {
 			title: 'GLASS',
 			component: <PopUp3 onGlassClick={handleOptionClick} />,
 		},
-		{ title: 'SUBMIT', component: <PopUp5 /> },
+		{ title: 'SUBMIT', component: <PopUp6 /> },
 	]
 
 	const handleNextClick = () => {

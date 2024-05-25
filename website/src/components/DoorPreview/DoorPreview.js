@@ -4,7 +4,9 @@ import {
 	ColorMapping,
 	DoorMapping,
 	GlassMapping,
+	sideDoors,
 } from '../../constants/Constants'
+import RightSideBar from '../RightSideBar/RightSideBar'
 import SwitchTheme from '../SwitchTheme/SwitchTheme'
 import { useStateSwitcher } from '../SwitcherContext'
 
@@ -13,6 +15,7 @@ const DoorPreview = ({ selectedOptions }) => {
 		doorShape: null,
 		color: null,
 		windowShape: null,
+		sideDoors: null,
 	})
 	const doorImg = document.getElementById('doorImage')
 	const glassImg = document.getElementById('glassImg')
@@ -50,6 +53,12 @@ const DoorPreview = ({ selectedOptions }) => {
 		})
 	}
 
+	function findSideDoors() {
+		return sideDoors.find((sideDoor) => {
+			return sideDoor.id === doorConfig.sideDoors
+		})
+	}
+
 	function defaultDoorSrc() {
 		return DoorMapping.find((img) => {
 			return img.id === sessionStorage.getItem('ActiveDoors') || 'fb1'
@@ -63,7 +72,7 @@ const DoorPreview = ({ selectedOptions }) => {
 	const { isChecked } = useStateSwitcher()
 
 	return (
-		<div className="flex h-full ">
+		<div className="DoorContainer flex h-full ">
 			<div className="DoorConfig">
 				<div className="DoorPreview">
 					{/* Render door preview based on doorConfig */}
@@ -135,7 +144,10 @@ const DoorPreview = ({ selectedOptions }) => {
 					</div>
 				</div>
 			</div>
-			<SwitchTheme />
+			<div className="side-right d-flex flex-column">
+				<SwitchTheme />
+				<RightSideBar />
+			</div>
 		</div>
 	)
 }

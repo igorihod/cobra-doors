@@ -10,65 +10,93 @@ $vw-viewport: 1920;
 @function pxToRem($px) {
 	@return math.div($px, 16) + rem;
 }
-.DoorDetails {
-	.DoorImgContainer {
-		//padding-top: get-vw(350px);
-		//position: absolute;
-		//bottom: get-vw(20px);
-		left: 25%;
-		.DoorImg {
-			width: get-vw(340px);
-			max-width: get-vw(280px);
-			max-height: get-vw(580px);
-			&.mirrored {
-				transform: scaleX(-1);
-			}
-		}
-		&.colorimg {
-			position: absolute;
-			z-index: 0;
-			margin-top: get-vw(-580px);
-			left: 25%;
-			img {
-				opacity: 0.85;
-			}
-		}
-		&.doors {
-			margin-left: 25%;
-			padding: 0;
-			margin-top: 18%;
-		}
-		&.GlassImg {
-			position: absolute;
-			z-index: -3;
-			//bottom: 0;
-			margin-top: 0px;
-			left: 25%;
-		}
-	}
-}
-
-@media (max-width: 1370px) {
+.DoorContainer {
 	.DoorDetails {
 		.DoorImgContainer {
+			//padding-top: get-vw(350px);
+			//position: absolute;
+			//bottom: get-vw(20px);
+			left: 25%;
+			.DoorImg {
+				width: get-vw(340px);
+				max-width: get-vw(280px);
+				max-height: get-vw(580px);
+				&.mirrored {
+					transform: scaleX(-1);
+				}
+			}
 			&.colorimg {
-				margin-top: -412.5px;
-				left: 24.5%;
+				position: absolute;
+				z-index: 0;
+				margin-top: get-vw(-580px);
+				left: 25%;
+				img {
+					opacity: 0.85;
+				}
+			}
+			&.doors {
+				margin-left: 25%;
+				padding: 0;
+				margin-top: 18%;
 			}
 			&.GlassImg {
 				position: absolute;
-				margin-left: -3px;
+				z-index: -3;
+				//bottom: 0;
+				margin-top: 0px;
+				left: 25%;
 			}
-			&.doors {
-				padding: 0;
-				margin-top: 120px;
-				margin-left: 163px;
+		}
+	}
+	.side-right {
+		gap: get-vw(100px);
+		.btn-group-vertical {
+			.btn {
+				border: none;
+				justify-content: end;
+				img {
+					width: 50px;
+					margin-left: auto;
+				}
+				&.active {
+					background: none;
+				}
+				&:active {
+					background: none;
+				}
+				&:focus-visible {
+					background: none;
+				}
+				&:hover {
+					background: none;
+				}
 			}
-			// .DoorImg {
-			// 	min-width: get-vw(100px);
-			// 	min-height: get-vw(240px);
-			// 	margin: 0;
-			// }
+		}
+	}
+}
+@media (max-width: 1370px) {
+	.DoorContainer {
+		.DoorDetails {
+			.DoorImgContainer {
+				&.colorimg {
+					margin-top: -412.5px;
+					left: 24.5%;
+				}
+				&.GlassImg {
+					position: absolute;
+					margin-left: -3px;
+				}
+				&.doors {
+					padding: 0;
+					margin-top: 120px;
+					margin-left: 163px;
+				}
+				// .DoorImg {
+				// 	min-width: get-vw(100px);
+				// 	min-height: get-vw(240px);
+				// 	margin: 0;
+				// }
+			}
 		}
 	}
 }

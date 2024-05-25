@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import './ContentBottom.scss'
+import { useStateContext } from '../Context/Context'
 import PopUp1 from '../PopUp1'
 import PopUp2 from '../PopUp2'
 import PopUp3 from '../PopUp3'
-import PopUp5 from '../PopUp5'
-import { useStateContext } from '../Context/Context'
+import PopUp6 from '../PopUp6'
+import './ContentBottom.scss'
 
 function ContentBottom({ onSelect }) {
 	const [selectedOption, setSelectedOption] = useState(null)
@@ -14,7 +14,7 @@ function ContentBottom({ onSelect }) {
 	const [showPopUp1, setShowPopUp1] = useState(false)
 	const [showPopUp2, setShowPopUp2] = useState(false)
 	const [showPopUp3, setShowPopUp3] = useState(false)
-	const [showPopUp5, setShowPopUp5] = useState(false)
+	const [showPopUp6, setShowPopUp6] = useState(false)
 
 	const [currentComponentId, setCurrentComponentId] = useState(1)
 
@@ -33,7 +33,7 @@ function ContentBottom({ onSelect }) {
 		{ id: 1, component: <PopUp1 onDoorModelClick={handleOptionClick} /> },
 		{ id: 2, component: <PopUp2 onColorClick={handleOptionClick} /> },
 		{ id: 3, component: <PopUp3 onGlassClick={handleOptionClick} /> },
-		{ id: 4, component: <PopUp5 /> },
+		{ id: 4, component: <PopUp6 /> },
 	]
 
 	const currentComponent = componentsData.find(

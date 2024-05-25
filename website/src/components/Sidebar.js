@@ -2,16 +2,18 @@ import '../App.scss'
 
 import React, { useState } from 'react'
 
-import colorIcon from '../public/icons/color.svg'
-import glassIcon from '../public/icons/glass.svg'
-import modelIcon from '../public/icons/model.svg'
-import submitIcon from '../public/icons/option.svg'
+import colorIcon from '../public/icons/icon-color.svg'
+import glassIcon from '../public/icons/icon-glass.svg'
+import modelIcon from '../public/icons/icon-model.svg'
+import shapeIcon from '../public/icons/icon-shape.svg'
+import submitIcon from '../public/icons/icon-submit.svg'
 
 import Button from './Button'
 import PopUp1 from './PopUp1'
 import PopUp2 from './PopUp2'
 import PopUp3 from './PopUp3'
 import PopUp5 from './PopUp5'
+import PopUp6 from './PopUp6'
 
 const Sidebar = ({ onSelect }) => {
 	const [selectedOption, setSelectedOption] = useState(null)
@@ -21,6 +23,7 @@ const Sidebar = ({ onSelect }) => {
 	const [showPopUp2, setShowPopUp2] = useState(false)
 	const [showPopUp3, setShowPopUp3] = useState(false)
 	const [showPopUp5, setShowPopUp5] = useState(false)
+	const [showPopUp6, setShowPopUp6] = useState(false)
 
 	const openSideBar = (id) => {
 		// if (showsubMenu === id) {
@@ -73,9 +76,19 @@ const Sidebar = ({ onSelect }) => {
 		} else if (showsubMenu === 5) {
 			return (
 				<div>
+					<PopUp5
+						setShowPopUp5={setShowPopUp5}
+						closePopUp={closePopUp}
+						onGlassClick={handleOptionClick}
+					/>
+				</div>
+			)
+		} else if (showsubMenu === 6) {
+			return (
+				<div>
 					{
-						<PopUp5
-							setShowPopUp5={setShowPopUp5}
+						<PopUp6
+							setShowPopUp6={setShowPopUp6}
 							closePopUp={closePopUp}
 						/>
 					}
@@ -118,6 +131,14 @@ const Sidebar = ({ onSelect }) => {
 					</div>
 
 					<div onClick={() => openSideBar(5)}>
+						<Button
+							props={{
+								title: 'SHAPE',
+								imageSrc: shapeIcon,
+							}}
+						/>
+					</div>
+					<div onClick={() => openSideBar(6)}>
 						<Button
 							props={{
 								title: 'SUBMIT',
