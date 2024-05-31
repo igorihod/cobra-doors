@@ -1,5 +1,6 @@
 @use 'sass:math';
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../RightSideBar/RightSideBar.scss';
 $vw-viewport: 1920;
 
 @function get-vw($font) {
@@ -10,66 +11,65 @@ $vw-viewport: 1920;
 @function pxToRem($px) {
 	@return math.div($px, 16) + rem;
 }
+
 .DoorContainer {
+	.SideTopDoor {
+		width: get-vw(423px);
+		margin: get-vw(163px) 0 0 17.8%;
+	}
 	.DoorDetails {
 		.DoorImgContainer {
 			//padding-top: get-vw(350px);
 			//position: absolute;
 			//bottom: get-vw(20px);
-			left: 25%;
+
+			//left: 25%;
+			img {
+				max-height: get-vw(520px);
+			}
 			.DoorImg {
 				width: get-vw(340px);
-				max-width: get-vw(280px);
-				max-height: get-vw(580px);
+				max-width: get-vw(250px);
 				&.mirrored {
 					transform: scaleX(-1);
 				}
 			}
+			.ColorSideRight {
+				max-width: get-vw(86px);
+			}
+			.ColorSideLeft {
+				max-width: get-vw(86px);
+			}
+			.ColoCenter {
+			}
+			&.color-centerimg {
+				//position: absolute;
+				// z-index: 0;
+				margin-left: get-vw(253px);
+				margin-top: get-vw(-520px);
+				//left: 27%;
+			}
 			&.colorimg {
-				position: absolute;
-				z-index: 0;
-				margin-top: get-vw(-580px);
-				left: 25%;
 				img {
 					opacity: 0.85;
 				}
 			}
 			&.doors {
-				margin-left: 25%;
+				width: get-vw(665px);
+				//margin-left: 27%;
 				padding: 0;
-				margin-top: 18%;
+				//margin-top: 25%;
+			}
+			&.m-t {
+				margin-top: 25%;
 			}
 			&.GlassImg {
 				position: absolute;
 				z-index: -3;
 				//bottom: 0;
-				margin-top: 0px;
-				left: 25%;
-			}
-		}
-	}
-	.side-right {
-		gap: get-vw(100px);
-		.btn-group-vertical {
-			.btn {
-				border: none;
-				justify-content: end;
-				img {
-					width: 50px;
-					margin-left: auto;
-				}
-				&.active {
-					background: none;
-				}
-				&:active {
-					background: none;
-				}
-				&:focus-visible {
-					background: none;
-				}
-				&:hover {
-					background: none;
-				}
+				//margin-top: 0px;
+				margin-left: 27%;
+				//left: 27%;
 			}
 		}
 	}
@@ -79,17 +79,20 @@ $vw-viewport: 1920;
 		.DoorDetails {
 			.DoorImgContainer {
 				&.colorimg {
-					margin-top: -412.5px;
+					//margin-top: -367.5px;
 					left: 24.5%;
 				}
 				&.GlassImg {
 					position: absolute;
-					margin-left: -3px;
+					//margin-left: -3px;
 				}
 				&.doors {
 					padding: 0;
-					margin-top: 120px;
-					margin-left: 163px;
+					//margin-top: 165px;
+					//margin-left: 163px;
+				}
+				&.m-t-mob {
+					margin-top: 0 !important;
 				}
 				// .DoorImg {
 				// 	min-width: get-vw(100px);
@@ -107,32 +110,82 @@ $vw-viewport: 1920;
 		$vw-context: $vw-viewport * 0.01 * 1px;
 		@return math.div($font, $vw-context) * 1vw;
 	}
-	.DoorDetails {
-		margin: 0 0 get-vw(50px) 38%;
+	.scrollable-container {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: relative;
+	}
 
-		.DoorImgContainer {
-			//padding-bottom: get-vw(90px);
-			//position: relative;
-			//left: 0;
-			//bottom: -15px;
-			&.colorimg {
-				margin-top: get-vw(-240px);
-				left: 38%;
+	.sticky-block {
+		position: -webkit-sticky; /* Для поддержки старых версий Safari */
+		position: sticky;
+		top: 0;
+		z-index: 10;
+	}
+
+	.DoorContainer {
+		.DoorDetails {
+			margin-bottom: get-vw(50px);
+			&.m-l-30 {
+				margin-left: 30%;
 			}
-			&.GlassImg {
-				position: absolute;
-				margin-left: get-vw(50.5px);
+			&.m-l-40 {
+				margin-left: get-vw(145px);
 			}
-			&.doors {
-				padding: 0;
-				margin-top: get-vw(105px);
-				margin-left: 0;
+			.DoorImgContainer {
+				&.colorimg {
+					margin-top: get-vw(-235px);
+					left: 38%;
+					margin-left: 0;
+				}
+				&.GlassImg {
+					position: absolute;
+					//margin-left: get-vw(50px);
+					margin-left: 0;
+					margin-top: get-vw(113px);
+				}
+
+				&.doors {
+					padding: 0;
+					margin-top: get-vw(113px);
+					margin-left: 0;
+					// img {
+					// 	max-height: get-vw(200px);
+					// }
+					.sideLeft {
+						max-height: get-vw(235px);
+					}
+					.sideRight {
+						max-height: get-vw(235px);
+					}
+				}
+				&.m-t-mob-none {
+					margin-top: 0 !important;
+				}
+				.DoorImg {
+					min-width: get-vw(100px);
+					min-height: get-vw(235px);
+					margin: 0;
+					&.m-l {
+						margin-left: get-vw(39px);
+					}
+				}
+				.ColorSideRight {
+					max-height: get-vw(235px);
+					max-width: get-vw(39px);
+				}
+				.ColorSideLeft {
+					max-height: get-vw(235px);
+					max-width: get-vw(39px);
+				}
+				img {
+					margin-left: 0;
+				}
 			}
-			.DoorImg {
-				min-width: get-vw(100px);
-				min-height: get-vw(240px);
-				margin: 0;
-			}
+		}
+		.SideTopDoor {
+			width: get-vw(178.5px);
+			margin: get-vw(83px) 0 0 27.5%;
 		}
 	}
 }

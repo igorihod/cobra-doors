@@ -92,6 +92,7 @@ $vw-viewport: 1920;
 		position: absolute;
 		right: 0;
 		top: pxToRem(25);
+		z-index: 100000;
 		.switch-btn {
 			width: pxToRem(150);
 			.form-check-input {
@@ -117,6 +118,36 @@ $vw-viewport: 1920;
 		.switch-checked-btn {
 			.form-check-label {
 				margin-left: pxToRem(-20);
+			}
+		}
+	}
+}
+@media (max-width: 500px) {
+	$vw-viewport: 500;
+	@function get-vw($font) {
+		$vw-context: $vw-viewport * 0.01 * 1px;
+		@return math.div($font, $vw-context) * 1vw;
+	}
+	@function pxToRem($px) {
+		@return math.div($px, 16) + rem;
+	}
+	.switch-form {
+		right: -30px;
+		.switch-btn {
+			.form-check-input {
+				width: pxToRem(100);
+				height: pxToRem(35);
+				background-size: pxToRem(35);
+			}
+			.form-check-label {
+				font-size: pxToRem(13);
+				margin-top: pxToRem(-28);
+				margin-left: pxToRem(0);
+			}
+		}
+		.switch-checked-btn {
+			.form-check-label {
+				margin-left: pxToRem(-25);
 			}
 		}
 	}

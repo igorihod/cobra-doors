@@ -2,6 +2,7 @@ import '../App.scss'
 
 import React, { useState } from 'react'
 
+import { useStateShape } from '../components/SwitcherContext'
 import colorIcon from '../public/icons/icon-color.svg'
 import glassIcon from '../public/icons/icon-glass.svg'
 import modelIcon from '../public/icons/icon-model.svg'
@@ -25,6 +26,9 @@ const Sidebar = ({ onSelect }) => {
 	const [showPopUp5, setShowPopUp5] = useState(false)
 	const [showPopUp6, setShowPopUp6] = useState(false)
 
+	const { stateShape } = useStateShape()
+
+	console.log('stateShape', stateShape)
 	const openSideBar = (id) => {
 		// if (showsubMenu === id) {
 		// 	setSubShowMenu(0)
@@ -75,11 +79,11 @@ const Sidebar = ({ onSelect }) => {
 			)
 		} else if (showsubMenu === 5) {
 			return (
-				<div>
+				<div className={`${stateShape ? 'd-block' : 'd-none'}`}>
 					<PopUp5
 						setShowPopUp5={setShowPopUp5}
 						closePopUp={closePopUp}
-						onGlassClick={handleOptionClick}
+						onSideDoorClick={handleOptionClick}
 					/>
 				</div>
 			)
@@ -130,7 +134,10 @@ const Sidebar = ({ onSelect }) => {
 						/>
 					</div>
 
-					<div onClick={() => openSideBar(5)}>
+					<div
+						className={`${stateShape ? 'd-block' : 'd-none'}`}
+						onClick={() => openSideBar(5)}
+					>
 						<Button
 							props={{
 								title: 'SHAPE',

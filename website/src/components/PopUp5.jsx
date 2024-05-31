@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import { sideDoors } from '../constants/Constants'
 const PopUp5 = (props) => {
-	const [selectSideDoors, setselectSideDoors] = useState(null)
+	const [selectSideDoors, setSelectSideDoors] = useState(null)
+
+	const [selectedImage, setSelectedImage] = useState(
+		sessionStorage.getItem('ActiveDoors') || null
+	)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -12,9 +16,12 @@ const PopUp5 = (props) => {
 	}, [])
 
 	const handleImageClick = (image) => {
-		setselectSideDoors(image.id)
-		props.onGlassClick({
-			windowShape: image.id,
+		console.log('IMG', image)
+		setSelectedImage(image.id)
+		sessionStorage.setItem('ActiveDoors', image.id)
+		setSelectSideDoors(image.id)
+		props.onSideDoorClick({
+			sideDoors: image.id,
 		})
 		// setShowSelectedImage(true);
 	}
@@ -33,9 +40,9 @@ const PopUp5 = (props) => {
 				>
 					{images.map((image, index) => (
 						<Carousel.Item key={index}>
-							<div className="carousel-img-container flex justify-between gap-[15px]">
+							<div className="carousel-img-container sideDoors flex justify-between gap-[15px]">
 								{images
-									.slice(index, index + 3)
+									.slice(index, index + 5)
 									.map((image, subIndex) => (
 										<img
 											key={subIndex}
@@ -60,7 +67,11 @@ const PopUp5 = (props) => {
 							key={index}
 							src={image.src}
 							alt={`Image ${index + 1}`}
-							className="h-[300px] object-cover cursor-pointer"
+							className={
+								selectedImage == image.id
+									? 'h-[300px] object-cover cursor-pointer active'
+									: 'h-[300px] object-cover cursor-pointer'
+							}
 							onClick={() => handleImageClick(image)}
 						/>
 					))}

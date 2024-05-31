@@ -9,7 +9,7 @@ function SwitchTheme() {
 	// const handleSwitchChange = () => {
 	// 	setIsChecked(!isChecked)
 	// }
-	console.log('isChecked', isChecked)
+	//console.log('isChecked', isChecked)
 
 	return (
 		<>

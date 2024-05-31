@@ -20,6 +20,7 @@ function App() {
 		doorShape: null,
 		color: null,
 		windowShape: null,
+		sideDoors: null,
 	})
 
 	const updateDoorConfig = (selectedOptions) => {

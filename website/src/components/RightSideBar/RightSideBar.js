@@ -1,124 +1,112 @@
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import sideDefault from '../../public/icons/side-default.svg'
-import sideDefaultActive from '../../public/icons/side-default_active.svg'
-import sideLeft from '../../public/icons/side-left.svg'
-import sideLeftTop from '../../public/icons/side-left_top.svg'
-import sideLeftTopActive from '../../public/icons/side-left_top_active.svg'
-import sideLeftTopRigth from '../../public/icons/side-left_top_right.svg'
-import sideLeftTopRigthActive from '../../public/icons/side-left_top_right_active.svg'
-import sideRight from '../../public/icons/side-right.svg'
-import sideRightActive from '../../public/icons/side-right_active.svg'
-import sideRightLeft from '../../public/icons/side-right_left.svg'
-import {
-	default as sideLeftActive,
-	default as sideRightLeftActive,
-} from '../../public/icons/side-right_left_active.svg'
-import sideRigthTop from '../../public/icons/side-right_top.svg'
-import sideRigthTopActive from '../../public/icons/side-right_top_active.svg'
-import sideTop from '../../public/icons/side-top.svg'
-import sideTopActive from '../../public/icons/side-top_active.svg'
+
+import sideTopDoor from '../../public/icons/side-top_1.svg'
 
 import React, { useState } from 'react'
+import { useStateShape } from '../SwitcherContext'
 
 function RightSideBar() {
-	const [activeButton, setActiveButton] = useState(null)
+	const [activeButton, setActiveButton] = useState(1)
+	const {
+		stateShape,
+		setStateShape,
+		topSide,
+		setTopSide,
+		rightSide,
+		setRightSide,
+		leftSide,
+		setLeftSide,
+	} = useStateShape()
+	//const { topSide, setTopSide } = useSharedTopSide()
 
-	const buttonClick = (id) => {
+	const buttonClick = (
+		id,
+		stateShape,
+		sideTopDoor,
+		sideRigthDoor,
+		sideLeftDoor
+	) => {
 		setActiveButton(id)
+		setStateShape(stateShape, sideTopDoor)
+		setTopSide(sideTopDoor)
+		setRightSide(sideRigthDoor)
+		setLeftSide(sideLeftDoor)
 	}
 
 	return (
 		<>
 			<ButtonGroup vertical>
 				<Button
-					onClick={() => buttonClick(1)}
+					className={
+						activeButton === 1 ? 'active-first' : 'default-first'
+					}
+					onClick={() => buttonClick(1, false, '', false, false)}
 					active={activeButton === 1}
-				>
-					<img
-						src={
-							activeButton === 1 ? sideDefaultActive : sideDefault
-						}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(2)}
+					className={
+						activeButton === 2 ? 'active-top' : 'default-top'
+					}
+					onClick={() =>
+						buttonClick(2, false, sideTopDoor, false, false)
+					}
 					active={activeButton === 2}
-				>
-					<img
-						src={activeButton === 2 ? sideTopActive : sideTop}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(3)}
+					className={
+						activeButton === 3 ? 'active-right' : 'default-right'
+					}
+					onClick={() => buttonClick(3, true, '', true, false)}
 					active={activeButton === 3}
-				>
-					<img
-						src={activeButton === 3 ? sideRightActive : sideRight}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(4)}
+					className={
+						activeButton === 4 ? 'active-left' : 'default-left'
+					}
+					onClick={() => buttonClick(4, true, '', false, true)}
 					active={activeButton === 4}
-				>
-					<img
-						src={activeButton === 4 ? sideLeftActive : sideLeft}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(5)}
+					className={
+						activeButton === 5
+							? 'active-right-left'
+							: 'default-right-left'
+					}
+					onClick={() => buttonClick(5, true, '', true, true)}
 					active={activeButton === 5}
-				>
-					<img
-						src={
-							activeButton === 5
-								? sideRightLeftActive
-								: sideRightLeft
-						}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(6)}
+					className={
+						activeButton === 6
+							? 'active-left-top'
+							: 'default-left-top'
+					}
+					onClick={() =>
+						buttonClick(6, true, sideTopDoor, false, true)
+					}
 					active={activeButton === 6}
-				>
-					<img
-						src={
-							activeButton === 6 ? sideLeftTopActive : sideLeftTop
-						}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(7)}
+					className={
+						activeButton === 7
+							? 'active-right-top'
+							: 'default-right-top'
+					}
+					onClick={() =>
+						buttonClick(7, true, sideTopDoor, true, false)
+					}
 					active={activeButton === 7}
-				>
-					<img
-						src={
-							activeButton === 7
-								? sideRigthTopActive
-								: sideRigthTop
-						}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 				<Button
-					onClick={() => buttonClick(8)}
+					className={
+						activeButton === 8 ? 'active-lrt' : 'default-lrt'
+					}
+					onClick={() =>
+						buttonClick(8, true, sideTopDoor, true, true)
+					}
 					active={activeButton === 8}
-				>
-					<img
-						src={
-							activeButton === 8
-								? sideLeftTopRigthActive
-								: sideLeftTopRigth
-						}
-						alt="icon"
-					/>
-				</Button>
+				></Button>
 			</ButtonGroup>
 		</>
 	)

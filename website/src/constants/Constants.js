@@ -873,132 +873,132 @@ export const sideDoors = [
 		id: '31',
 		src: '/sideDoors/side_31.svg',
 	},
-	{
-		id: '32',
-		src: '/sideDoors/side_32.svg',
-	},
-	{
-		id: '33',
-		src: '/sideDoors/side_33.svg',
-	},
-	{
-		id: '34',
-		src: '/sideDoors/side_34.svg',
-	},
-	{
-		id: '35',
-		src: '/sideDoors/side_35.svg',
-	},
-	{
-		id: '36',
-		src: '/sideDoors/side_36.svg',
-	},
-	{
-		id: '37',
-		src: '/sideDoors/side_37.svg',
-	},
-	{
-		id: '38',
-		src: '/sideDoors/side_38.svg',
-	},
-	{
-		id: '39',
-		src: '/sideDoors/side_39.svg',
-	},
-	{
-		id: '40',
-		src: '/sideDoors/side_40.svg',
-	},
-	{
-		id: '41',
-		src: '/sideDoors/side_41.svg',
-	},
-	{
-		id: '42',
-		src: '/sideDoors/side_42.svg',
-	},
-	{
-		id: '43',
-		src: '/sideDoors/side_43.svg',
-	},
-	{
-		id: '44',
-		src: '/sideDoors/side_44.svg',
-	},
-	{
-		id: '45',
-		src: '/sideDoors/side_45.svg',
-	},
-	{
-		id: '46',
-		src: '/sideDoors/side_46.svg',
-	},
-	{
-		id: '47',
-		src: '/sideDoors/side_47.svg',
-	},
-	{
-		id: '48',
-		src: '/sideDoors/side_48.svg',
-	},
-	{
-		id: '49',
-		src: '/sideDoors/side_49.svg',
-	},
-	{
-		id: '50',
-		src: '/sideDoors/side_50.svg',
-	},
-	{
-		id: '51',
-		src: '/sideDoors/side_51.svg',
-	},
-	{
-		id: '52',
-		src: '/sideDoors/side_52.svg',
-	},
-	{
-		id: '53',
-		src: '/sideDoors/side_53.svg',
-	},
-	{
-		id: '54',
-		src: '/sideDoors/side_54.svg',
-	},
-	{
-		id: '55',
-		src: '/sideDoors/side_55.svg',
-	},
-	{
-		id: '56',
-		src: '/sideDoors/side_56.svg',
-	},
-	{
-		id: '57',
-		src: '/sideDoors/side_57.svg',
-	},
-	{
-		id: '58',
-		src: '/sideDoors/side_58.svg',
-	},
-	{
-		id: '59',
-		src: '/sideDoors/side_59.svg',
-	},
-	{
-		id: '60',
-		src: '/sideDoors/side_60.svg',
-	},
-	{
-		id: '61',
-		src: '/sideDoors/side_61.svg',
-	},
-	{
-		id: '62',
-		src: '/sideDoors/side_62.svg',
-	},
-	{
-		id: '63',
-		src: '/sideDoors/side_63.svg',
-	},
+	// {
+	// 	id: '32',
+	// 	src: '/sideDoors/side_32.svg',
+	// },
+	// {
+	// 	id: '33',
+	// 	src: '/sideDoors/side_33.svg',
+	// },
+	// {
+	// 	id: '34',
+	// 	src: '/sideDoors/side_34.svg',
+	// },
+	// {
+	// 	id: '35',
+	// 	src: '/sideDoors/side_35.svg',
+	// },
+	// {
+	// 	id: '36',
+	// 	src: '/sideDoors/side_36.svg',
+	// },
+	// {
+	// 	id: '37',
+	// 	src: '/sideDoors/side_37.svg',
+	// },
+	// {
+	// 	id: '38',
+	// 	src: '/sideDoors/side_38.svg',
+	// },
+	// {
+	// 	id: '39',
+	// 	src: '/sideDoors/side_39.svg',
+	// },
+	// {
+	// 	id: '40',
+	// 	src: '/sideDoors/side_40.svg',
+	// },
+	// {
+	// 	id: '41',
+	// 	src: '/sideDoors/side_41.svg',
+	// },
+	// {
+	// 	id: '42',
+	// 	src: '/sideDoors/side_42.svg',
+	// },
+	// {
+	// 	id: '43',
+	// 	src: '/sideDoors/side_43.svg',
+	// },
+	// {
+	// 	id: '44',
+	// 	src: '/sideDoors/side_44.svg',
+	// },
+	// {
+	// 	id: '45',
+	// 	src: '/sideDoors/side_45.svg',
+	// },
+	// {
+	// 	id: '46',
+	// 	src: '/sideDoors/side_46.svg',
+	// },
+	// {
+	// 	id: '47',
+	// 	src: '/sideDoors/side_47.svg',
+	// },
+	// {
+	// 	id: '48',
+	// 	src: '/sideDoors/side_48.svg',
+	// },
+	// {
+	// 	id: '49',
+	// 	src: '/sideDoors/side_49.svg',
+	// },
+	// {
+	// 	id: '50',
+	// 	src: '/sideDoors/side_50.svg',
+	// },
+	// {
+	// 	id: '51',
+	// 	src: '/sideDoors/side_51.svg',
+	// },
+	// {
+	// 	id: '52',
+	// 	src: '/sideDoors/side_52.svg',
+	// },
+	// {
+	// 	id: '53',
+	// 	src: '/sideDoors/side_53.svg',
+	// },
+	// {
+	// 	id: '54',
+	// 	src: '/sideDoors/side_54.svg',
+	// },
+	// {
+	// 	id: '55',
+	// 	src: '/sideDoors/side_55.svg',
+	// },
+	// {
+	// 	id: '56',
+	// 	src: '/sideDoors/side_56.svg',
+	// },
+	// {
+	// 	id: '57',
+	// 	src: '/sideDoors/side_57.svg',
+	// },
+	// {
+	// 	id: '58',
+	// 	src: '/sideDoors/side_58.svg',
+	// },
+	// {
+	// 	id: '59',
+	// 	src: '/sideDoors/side_59.svg',
+	// },
+	// {
+	// 	id: '60',
+	// 	src: '/sideDoors/side_60.svg',
+	// },
+	// {
+	// 	id: '61',
+	// 	src: '/sideDoors/side_61.svg',
+	// },
+	// {
+	// 	id: '62',
+	// 	src: '/sideDoors/side_62.svg',
+	// },
+	// {
+	// 	id: '63',
+	// 	src: '/sideDoors/side_63.svg',
+	// },
 ]

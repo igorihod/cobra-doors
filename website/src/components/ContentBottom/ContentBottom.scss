@@ -14,6 +14,7 @@ $vw-viewport: 390;
 @media (max-width: 1200px) {
 	.content-bottom {
 		.buttons {
+			position: relative;
 			button {
 				padding: get-vw(17px) 0;
 			}
@@ -36,6 +37,12 @@ $vw-viewport: 390;
 	}
 	.carousel-img-container {
 		gap: get-vw(15px);
+		&.sideDoors {
+			img {
+				width: 12%;
+				height: get-vw(240px);
+			}
+		}
 		img {
 			//width: get-vw(130px);
 			width: 32%;
